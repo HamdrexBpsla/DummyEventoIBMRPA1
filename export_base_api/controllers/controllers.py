@@ -6,7 +6,7 @@ import json
 class ExportBaseController(http.Controller):
     
     @http.route('/api/bases', auth='public', method=['GET'], csrf=False)
-        def get_bases(self, **kw)):
+        def get_bases(self, **kw):
             try:
                 bases = http.request.env['helpdesk.ticket'].sudo().search_read([],['id','name'])
                 res = json.dumps(bases, ensure_ascii=False).encode('utf-8')
