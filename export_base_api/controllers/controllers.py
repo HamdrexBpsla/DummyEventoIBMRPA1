@@ -8,7 +8,7 @@ class ExportBaseController(http.Controller):
     @http.route('/api/DT', auth='public', method=['GET'], csrf=False)
     def get_DT(self, **kw):
         try:
-            DTS = http.request.env['x_detalle_de_trabajo'].sudo().search_read([],['id','name','x_studio_many2one_field_eMpTJ','x_studio_tipo','x_studio_fecha_de_envi','x_studio_notas'])
+            DTS = http.request.env['studio_customization.x_detalle_de_trabajo'].sudo().search_read([],['id','name','x_studio_many2one_field_eMpTJ','x_studio_tipo','x_studio_fecha_de_envi','x_studio_notas'])
             
             res = json.dumps(DTS, ensure_ascii=False).encode('utf-8')
             return Response(res, content_type='application/json;charset=utf-8', status=200)
