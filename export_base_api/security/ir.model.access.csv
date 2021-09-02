@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_export_base_api_export_base_api,export_base_api.export_base_api,model_export_base_api_export_base_api,base.group_user,1,1,1,1
